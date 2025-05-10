@@ -1,11 +1,12 @@
 import {Component} from "react";
 import './App.css';
+import {Counter} from "./Counter/Counter";
 
 class App extends Component{
     render() {
         return (
-            <div className="App">
-                <h1>This is App Component!</h1>
+            <div className="app">
+                <Counter data={"Saman"}/>
             </div>
         );
     }
