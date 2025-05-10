@@ -2,7 +2,7 @@ import {Component} from "react";
 import './Counter.css';
 
 interface CounterProps{
-    data:any;
+    data?:any;
 }
 
 interface CounterAppState{
@@ -25,6 +25,12 @@ export class Counter extends Component<CounterProps,CounterAppState> {
 
     componentWillUnmount() {
         alert("ComponentWillUnmount:Component will be unmounted!");
+    }
+
+    componentDidUpdate(prevProps: Readonly<CounterProps>, prevState: Readonly<CounterAppState>, snapshot?: any) {
+        if (prevState.count !== this.state.count) {
+            alert("ComponentDidUpdate:Count has been updated");
+        }
     }
 
     increment=()=>{
